@@ -21,7 +21,8 @@ chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 
   // now do the same as the previous line to find the url
   //***** FILL IN******
-    
+  document.getElementById("page-url").textContent = tab.url;
+
   // ── ask content.js for the word count ────────────────────
   // sendMessage sends a message to content.js running on the page
   // content.js does the work and sends a response back
