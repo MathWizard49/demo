@@ -15,18 +15,18 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.action === "getWordCount") {
 
     // **FILL IN (get text from webpage)
-    const text = ;
+    const text = document.body.innerText;;
 
     // split into words and remove empty strings
     const words = text.trim().split(/\s+/).filter(Boolean);
 
     // **FILL IN (count the number of words in the text )
-    const wordCount = 
+    const wordCount = words.length;
 
     // **FILL IN
     // **HINT** average reading speed is ~200 words per minute
     // Math.ceil rounds up 
-    const readTime = ;
+    const readTime = Math.ceil(wordCount / 200);
 
     // send the result back to popup.js
     sendResponse({ wordCount: wordCount, readTime: readTime });
